@@ -1,0 +1,28 @@
+# Compiler
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -Iinclude
+
+# Directories
+SRC_DIR = src
+INC_DIR = include
+
+# Files
+# Use wildcard to automatically grab ALL .cpp files in the src directory
+SRC = $(wildcard $(SRC_DIR)/*.cpp)
+TARGET = solution 
+
+# Default target
+all: $(TARGET)
+
+# Build executable
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+
+# Remove generated files
+clean:
+	rm -f $(TARGET)
+
+# Rebuild from scratch
+rebuild: clean all
+
+.PHONY: all clean rebuild
