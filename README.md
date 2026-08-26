@@ -86,31 +86,9 @@ std::vector<double> ans = GaussianSolver(Augmented_real);
 ComplexVector ans = GaussianSolver(Augmented_complex);
 ```
 
-## Mathematical Overview
-
-For a system of linear equations
-
-$$
-Ax = B
-$$
-
-Gaussian elimination transforms the system into an upper triangular form, after which **back substitution** is used to obtain the solution vector.
-
-Partial pivoting is used during elimination by selecting an appropriate pivot element at each step. This improves numerical stability, particularly when working with floating-point values.
-
-This makes the solver particularly useful for applications involving complex-valued electrical quantities.
-
 ## Power-System Application
 
 The `example/` directory contains a demonstration of GaussianSolver being used with a complex **Y-bus matrix** for an IEEE 14-bus power system.
-
-The example demonstrates a practical workflow involving:
-
-1. Reading transmission-line data.
-2. Generating the Y-bus admittance matrix.
-3. Constructing a complex linear system.
-4. Solving the system using Gaussian elimination.
-5. Calculating complex bus voltages.
 
 ## Issues/Bugs
 
